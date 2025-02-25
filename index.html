@@ -1,1 +1,107 @@
-hiii
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FluxRat - Exposing FluxTeam</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #eee;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background: red;
+            padding: 20px;
+            color: white;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: yellow;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .section {
+            padding: 50px 20px;
+            border-bottom: 1px solid #333;
+        }
+        .evidence img {
+            width: 300px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .evidence img:hover {
+            transform: scale(1.1);
+        }
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: black;
+            padding: 20px;
+            border: 2px solid red;
+            text-align: center;
+        }
+        #popup img {
+            width: 100%;
+            max-width: 500px;
+        }
+        #popup button {
+            margin-top: 10px;
+            padding: 10px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>⚠️ FluxRat: Exposing FluxTeam Executor ⚠️</h1>
+        <p>Evidence and reports proving FluxTeam is a potential RAT/virus.</p>
+        <a href="#evidence" class="btn">View Evidence</a>
+    </header>
+
+    <div class="section" id="evidence">
+        <h2>🚨 Evidence 🚨</h2>
+        <p>Click an image to enlarge.</p>
+        <div class="evidence">
+            <img src="proof1.png" alt="Evidence 1" onclick="showPopup(this.src)">
+            <img src="proof2.png" alt="Evidence 2" onclick="showPopup(this.src)">
+        </div>
+    </div>
+
+    <div class="section" id="reports">
+        <h2>📢 User Reports</h2>
+        <p>Coming soon...</p>
+    </div>
+
+    <div id="popup">
+        <img src="" id="popup-img">
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        function showPopup(src) {
+            document.getElementById("popup-img").src = src;
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
